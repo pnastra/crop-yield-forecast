@@ -1,0 +1,25 @@
+# Python / uv
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Data (downloaded via `make data`)
+data/raw/
+data/processed/
+
+# MLflow
+mlruns/
+mlflow.db
+mlartifacts/
+
+# Secrets — never commit
+kaggle.json
+.env
+*.token
+
+# macOS / editors
+.DS_Store
+.vscode/
