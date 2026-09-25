@@ -102,11 +102,11 @@ crop-yield-forecast/
 ### M0 — Setup (Friday night or Saturday, about 1 h)
 - [x] Install Docker Desktop and `libomp`
 - [x] Sanity check: `docker run --rm hello-world` works and Docker Desktop is running
-- [ ] Create the public GitHub repo `crop-yield-forecast` with the MIT license
+- [x] Create the public GitHub repo `crop-yield-forecast` with the MIT license
 - [x] `uv init`, add the dependencies from §3, commit `uv.lock`
 - [x] Add `.gitignore` (§9), `CLAUDE.md` (containing `@PLAN.md`), `Makefile`
 - [x] `make data` downloads the CSVs into `data/raw/`
-- [ ] First commit and push
+- [x] First commit and push
 
 ### M1 — EDA (Saturday morning, 2–3 h, timeboxed)
 Notebook: `notebooks/01_eda.ipynb`. It answers these questions, and each finding goes into the README:
