@@ -110,13 +110,13 @@ crop-yield-forecast/
 
 ### M1 — EDA (Saturday morning, 2–3 h, timeboxed)
 Notebook: `notebooks/01_eda.ipynb`. It answers these questions, and each finding goes into the README:
-- [ ] **Duplicates:** are there repeated (Area, Item, Year) rows after the merge? How many, and how are they resolved?
-- [ ] **Coverage:** which country-crop pairs have a full 1990–2013 history, and where are the gaps? What minimum history is needed for lags?
-- [ ] **Scale:** how does yield range across crops (e.g. potatoes vs rice)? Decide between a log target and per-crop handling.
-- [ ] **Feature quality:** does rainfall change year to year, or is it a constant per country? How do pesticides and temperature correlate with yield?
-- [ ] **Trend:** how strong is the upward trend over time, and how well does last year's yield alone predict this year's?
-- [ ] **Thailand rice:** plot the full series (the app's showcase)
-- [ ] Record the decisions for M2 at the end of the notebook
+- [x] **Duplicates:** are there repeated (Area, Item, Year) rows after the merge? How many, and how are they resolved?
+- [x] **Coverage:** which country-crop pairs have a full 1990–2013 history, and where are the gaps? What minimum history is needed for lags?
+- [x] **Scale:** how does yield range across crops (e.g. potatoes vs rice)? Decide between a log target and per-crop handling.
+- [x] **Feature quality:** does rainfall change year to year, or is it a constant per country? How do pesticides and temperature correlate with yield?
+- [x] **Trend:** how strong is the upward trend over time, and how well does last year's yield alone predict this year's?
+- [x] **Thailand rice:** plot the full series (the app's showcase)
+- [x] Record the decisions for M2 at the end of the notebook
 
 ### M2 — Baseline, model, MLflow (Saturday afternoon)
 - [ ] `data.py` builds a clean panel with one row per (Area, Item, Year)
