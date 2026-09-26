@@ -119,16 +119,16 @@ Notebook: `notebooks/01_eda.ipynb`. It answers these questions, and each finding
 - [x] Record the decisions for M2 at the end of the notebook
 
 ### M2 — Baseline, model, MLflow (Saturday afternoon)
-- [ ] `data.py` builds a clean panel with one row per (Area, Item, Year)
-- [ ] Task: **one-year-ahead forecast.** Features must be known before the target year: yield lags 1–3, prior-year weather and pesticides, crop, country. Same-year weather is left out unless the EDA shows it adds something, and if it's used, that's documented as an assumption.
-- [ ] **Time split:** train ≤ 2008, test 2009–2013
-- [ ] **Baseline:** predict last year's yield
-- [ ] **Model:** LightGBM
-- [ ] **Leakage demo:** the same model on a random 80/20 split
-- [ ] **Metrics:** MAPE and RMSE on the log target, overall and per crop
-- [ ] MLflow logs three runs (`baseline`, `lgbm_time_split`, `lgbm_random_split`) to `sqlite:///mlflow.db`
-- [ ] Save `models/model.txt` and `app/data/panel.parquet`
-- [ ] Tests: no duplicate keys, no test years in the training data, lags never read future rows
+- [x] `data.py` builds a clean panel with one row per (Area, Item, Year)
+- [x] Task: **one-year-ahead forecast.** Features must be known before the target year: yield lags 1–3, prior-year weather and pesticides, crop, country. Same-year weather is left out unless the EDA shows it adds something, and if it's used, that's documented as an assumption.
+- [x] **Time split:** train ≤ 2008, test 2009–2013
+- [x] **Baseline:** predict last year's yield
+- [x] **Model:** LightGBM
+- [x] **Leakage demo:** the same model on a random 80/20 split
+- [x] **Metrics:** MAPE and RMSE on the log target, overall and per crop
+- [x] MLflow logs three runs (`baseline`, `lgbm_time_split`, `lgbm_random_split`) to `sqlite:///mlflow.db`
+- [x] Save `models/model.txt` and `app/data/panel.parquet`
+- [x] Tests: no duplicate keys, no test years in the training data, lags never read future rows
 
 ### M3 — API and Docker (Sunday morning)
 - [ ] `api/main.py`: `GET /health`, and `POST /predict` taking `{area, item, year}` and returning the prediction plus the baseline
