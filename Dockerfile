@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends libgomp1 \
 # Copy the uv binary from its official image instead of pip-installing it.
 COPY --from=ghcr.io/astral-sh/uv:0.10.7 /uv /bin/uv
 
-# Hugging Face Spaces run containers as user 1000, so build as that user from the start.
+# Run as an unprivileged user (uid 1000) instead of root: standard container hygiene.
 RUN useradd -m -u 1000 user
 USER user
 WORKDIR /home/user/app
@@ -27,11 +27,13 @@ RUN uv sync --locked --no-dev --no-install-project
 COPY --chown=user src ./src
 RUN uv sync --locked --no-dev
 
-# 3) What the service needs at runtime: API code, model and panel.
+# 3) What the services need at runtime: API and app code, model and panel.
 COPY --chown=user api ./api
+COPY --chown=user app/streamlit_app.py ./app/streamlit_app.py
 COPY --chown=user models/model.txt ./models/model.txt
 COPY --chown=user app/data/panel.parquet ./app/data/panel.parquet
 
-# 7860 is the port Hugging Face Spaces expects. M4 switches this to the Streamlit app.
-EXPOSE 7860
-CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "7860"]
+# Default command: the FastAPI service on 8000. `make docker-run-app` overrides it to run
+# the Streamlit app on 8501 from this same image.
+EXPOSE 8000 8501
+CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]

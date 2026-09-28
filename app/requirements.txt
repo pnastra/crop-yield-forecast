@@ -1,0 +1,8 @@
+# Runtime packages for the Streamlit app only (used by Streamlit Community Cloud).
+# Versions match uv.lock; update both together. The cropyield code is imported from ../src.
+streamlit==1.64.0
+pandas==3.0.6
+numpy==2.5.3
+pyarrow==25.0.1
+lightgbm==4.7.0
+plotly==7.1.0
