@@ -51,7 +51,7 @@ I'm learning Docker, uv, MLflow and Hugging Face in this project, so explain as 
 - **Core:** pandas, numpy, scikit-learn, lightgbm, mlflow, pyarrow
 - **Serving:** fastapi, uvicorn, pydantic, streamlit, plotly
 - **Tooling:** kaggle, huggingface_hub (provides the `hf` CLI)
-- **Dev:** pytest, ruff, jupyter / ipykernel
+- **Dev:** pytest, ruff, jupyter / ipykernel, httpx (for FastAPI's `TestClient`)
 - **Stretch only:** shap
 
 ---
@@ -131,11 +131,11 @@ Notebook: `notebooks/01_eda.ipynb`. It answers these questions, and each finding
 - [x] Tests: no duplicate keys, no test years in the training data, lags never read future rows
 
 ### M3 — API and Docker (Sunday morning)
-- [ ] `api/main.py`: `GET /health`, and `POST /predict` taking `{area, item, year}` and returning the prediction plus the baseline
-- [ ] Pydantic validation (unknown country or crop → 422)
-- [ ] `Dockerfile` based on `python:3.13-slim` (or 3.12 if pinned), installing with `uv`
-- [ ] `make docker-build && make docker-run` works locally
-- [ ] Test for the API using FastAPI's `TestClient`
+- [x] `api/main.py`: `GET /health`, and `POST /predict` taking `{area, item, year}` and returning the prediction plus the baseline
+- [x] Pydantic validation (unknown country or crop → 422)
+- [x] `Dockerfile` based on `python:3.13-slim` (or 3.12 if pinned), installing with `uv`
+- [x] `make docker-build && make docker-run` works locally
+- [x] Test for the API using FastAPI's `TestClient`
 
 ### M4 — Streamlit app and Hugging Face deploy (Sunday midday)
 - [ ] `app/streamlit_app.py`: pick a country and crop (default: Thailand, Rice, paddy); chart of actual vs model vs baseline; a small table of test-period metrics

@@ -17,7 +17,6 @@ import re
 from pathlib import Path
 
 import lightgbm as lgb
-import mlflow
 import numpy as np
 import pandas as pd
 
@@ -73,6 +72,8 @@ def _metric_name(name: str) -> str:
 
 def log_results(test: pd.DataFrame, pred_col: str) -> pd.DataFrame:
     """Log overall and per-crop metrics plus the per-crop table to the active run."""
+    import mlflow  # imported here so serving code can import this module without MLflow
+
     table = per_crop(test, pred_col)
     for item, row in table.iterrows():
         prefix = "" if item == "ALL" else f"{_metric_name(item)}/"
@@ -82,6 +83,8 @@ def log_results(test: pd.DataFrame, pred_col: str) -> pd.DataFrame:
 
 
 def main() -> None:
+    import mlflow
+
     mlflow.set_tracking_uri(TRACKING_URI)
     mlflow.set_experiment(EXPERIMENT)
 
