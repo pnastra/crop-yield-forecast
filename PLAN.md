@@ -140,17 +140,17 @@ Notebook: `notebooks/01_eda.ipynb`. It answers these questions, and each finding
 ### M4 — Streamlit app and Streamlit Community Cloud deploy (Sunday midday)
 - [x] `app/streamlit_app.py`: pick a country and crop (default: Thailand, Rice, paddy); chart of actual vs model vs baseline; a small table of test-period metrics
 - [x] Add `app/requirements.txt` with only the app's runtime packages, and check the app runs from a clean venv built from it
-- [ ] Deploy to Streamlit Community Cloud from the GitHub repo (steps in §10)
-- [ ] The public URL loads from a cold start (the app sleeps when idle; the first load takes about a minute)
+- [x] Deploy to Streamlit Community Cloud from the GitHub repo (steps in §10)
+- [x] The public URL loads from a cold start (the app sleeps when idle; the first load takes about a minute)
 - [x] Docker runs the app locally on port 8501 (`make docker-run-app`), alongside the FastAPI container from M3
 
 ### M5 — README and model card (Sunday afternoon)
-- [ ] Top of the README: the live demo link, a screenshot, and one sentence on what it does
-- [ ] "What I found in the data" (from M1)
-- [ ] Results table: baseline vs LightGBM on the time split, plus the random split with an explanation of why it's inflated
-- [ ] Model card: intended use, limits (national-level, annual, data ends in 2013, not for farm decisions), data sources
-- [ ] Credits: FAO (FAOSTAT) and the World Bank, plus the Kaggle dataset author
-- [ ] How to run: `make data && make train && make app`
+- [x] Top of the README: the live demo link, a screenshot, and one sentence on what it does
+- [x] "What I found in the data" (from M1)
+- [x] Results table: baseline vs LightGBM on the time split, plus the random split with an explanation of why it's inflated
+- [x] Model card: intended use, limits (national-level, annual, data ends in 2013, not for farm decisions), data sources
+- [x] Credits: FAO (FAOSTAT) and the World Bank, plus the Kaggle dataset author
+- [x] How to run: `make data && make train && make app`
 
 ### Stretch (only if everything above is done)
 - [ ] A SHAP "why this prediction" panel in the app
@@ -172,10 +172,10 @@ Notebook: `notebooks/01_eda.ipynb`. It answers these questions, and each finding
 
 ## 8. Definition of done
 
-- [ ] Public GitHub repo with a clean README, MIT license, and passing tests
-- [ ] A live Streamlit Community Cloud URL
-- [ ] LightGBM beats the baseline on the time split. If it doesn't, the README says so honestly and explains why.
-- [ ] No secrets or raw data in the git history
+- [x] Public GitHub repo with a clean README, MIT license, and passing tests
+- [x] A live Streamlit Community Cloud URL
+- [x] LightGBM beats the baseline on the time split. If it doesn't, the README says so honestly and explains why.
+- [x] No secrets or raw data in the git history
 
 ---
 
